@@ -2,7 +2,7 @@
   "name": "nuanplan",
   "version": "0.1.0",
   "private": true,
-  "start_url": "https://githubcaptain117.github.io/nuanplan",
+  "start_url": "http://www.nuanplan.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
