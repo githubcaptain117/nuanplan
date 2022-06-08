@@ -1,5 +1,6 @@
 import React from 'react';
 const Cats = () =>{
+  console.log("CAT");
   return (
     <div>
       <h3>Cats</h3>
