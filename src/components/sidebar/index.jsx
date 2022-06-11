@@ -11,7 +11,7 @@ import {
 } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import sidebarBg from '../../logo.svg';
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 
 function SideNavBar({ image, collapsed, toggled, handleToggleSidebar }) {
