@@ -16,8 +16,8 @@ import {
 } from "./components";
 
 function App() {
-  const [collapsed, setCollapsed] = useState(false);
-  const [image, setImage] = useState(true);
+  const [collapsed] = useState(false);
+  const [image] = useState(true);
   const [toggled, setToggled] = useState(false);
 
   const handleToggleSidebar = (value) => {
