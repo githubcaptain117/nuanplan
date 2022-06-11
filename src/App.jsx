@@ -6,7 +6,7 @@ import './styles/App.scss';
 import {
   Navbar,
   Sidebar,
-  Footer,
+  // Footer,
   Home,
   About,
   Contact,
@@ -19,14 +19,6 @@ function App() {
   const [collapsed, setCollapsed] = useState(false);
   const [image, setImage] = useState(true);
   const [toggled, setToggled] = useState(false);
-
-  const handleCollapsedChange = (checked) => {
-    setCollapsed(checked);
-  };
-
-  const handleImageChange = (checked) => {
-    setImage(checked);
-  };
 
   const handleToggleSidebar = (value) => {
     setToggled(value);
