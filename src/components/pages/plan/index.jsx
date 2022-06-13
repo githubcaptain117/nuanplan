@@ -5,7 +5,7 @@ function Plan({ handleettitlename }) {
 
     useEffect(() => {
         handleettitlename("สร้างแผน");
-    }, [])
+    })
 
     return (
         <div className="home">

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart } from 'react-icons/fa';
+import { FaTachometerAlt, FaGem, FaGithub} from 'react-icons/fa';
 import {
   ProSidebar,
   Menu,

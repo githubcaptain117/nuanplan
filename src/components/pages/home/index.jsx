@@ -4,7 +4,7 @@ function Home({handleettitlename}) {
 
   useEffect(() => {
     handleettitlename("Dashboard");
-}, [])
+})
 
   return (
     // <div className="home">
