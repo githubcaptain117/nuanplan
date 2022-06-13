@@ -29,12 +29,12 @@ const Navbar = ({titlename}) => {
                 </NavLink>
               </li> */}
               <li className="nav-item">
-                <NavLink className="nav-link navbar-font" to="/contact">
+                <NavLink className="nav-link navbar-font" to="/nuanplan/contact">
                   Profile
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link navbar-font" to="/blog">
+                <NavLink className="nav-link navbar-font" to="/nuanplan/blog">
                   Logout
                 </NavLink>
               </li>
