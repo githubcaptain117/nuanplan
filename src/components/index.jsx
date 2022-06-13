@@ -8,3 +8,4 @@ export { default as Blog } from "./pages/blog/Blog";
 export { default as Posts } from "./pages/blog/Posts";
 export { default as Post } from "./pages/blog/Post";
 export { default as Plan } from "./pages/plan";
+export { default as Planlist } from "./pages/plan/planlist";

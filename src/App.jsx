@@ -14,6 +14,7 @@ import {
   Posts,
   Post,
   Plan,
+  Planlist,
 } from "./components";
 
 function App() {
@@ -48,9 +49,10 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home handleettitlename={handleettitlename} />} />
                 <Route path="/plan" element={<Plan handleettitlename={handleettitlename} />} />
-                <Route path="/about" element={<About handleettitlename={handleettitlename}/>} />
-                <Route path="/contact" element={<Contact handleettitlename={handleettitlename}/>} />
-                <Route path="/blog" element={<Blog handleettitlename={handleettitlename}/>}>
+                <Route path="/planlist" element={<Planlist handleettitlename={handleettitlename} />} />
+                <Route path="/about" element={<About handleettitlename={handleettitlename} />} />
+                <Route path="/contact" element={<Contact handleettitlename={handleettitlename} />} />
+                <Route path="/blog" element={<Blog handleettitlename={handleettitlename} />}>
                   <Route path="" element={<Posts />} />
                   <Route path=":postSlug" element={<Post />} />
                 </Route>

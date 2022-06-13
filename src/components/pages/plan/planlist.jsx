@@ -7,8 +7,10 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import { Button } from "@mui/material";
 
+
 //---------------------------- icon
-import { FaSave, FaTimesCircle } from "react-icons/fa";
+import { FaSearch, FaTimesCircle } from "react-icons/fa";
+import EnhancedTable from "../../table/plan/tableplanlist";
 
 
 // const Item = styled(Paper)(({ theme }) => ({
@@ -19,10 +21,10 @@ import { FaSave, FaTimesCircle } from "react-icons/fa";
 //     color: theme.palette.text.secondary,
 // }));
 
-function Plan({ handleettitlename }) {
+function Planlist({ handleettitlename }) {
 
     useEffect(() => {
-        handleettitlename("สร้างแผน");
+        handleettitlename("รายการแผน");
     })
 
     const FormRow = () => {
@@ -45,18 +47,19 @@ function Plan({ handleettitlename }) {
         <div className="home">
             <div className="container">
                 <div className="row align-items-center my-5">
-                    <h1 className="font-weight-light">สร้างแผน</h1>
+                    <h1 className="font-weight-light">รายการแผน</h1>
                     <Box sx={{ flexGrow: 1 }}>
                         <Grid container spacing={3}>
                             <Grid container item spacing={3}>
                                 <FormRow />
                             </Grid>
-                            <Grid container item spacing={3}>
+                            {/* <Grid container item spacing={3}>
                                 <FormRow />
                             </Grid>
                             <Grid container item spacing={3}>
                                 <FormRow />
-                            </Grid>
+                            </Grid> */}
+
 
                             <Grid container item spacing={3}>
                                 <React.Fragment>
@@ -68,8 +71,8 @@ function Plan({ handleettitlename }) {
                                         </Button>
                                     </Grid>
                                     <Grid item xs={3}>
-                                        <Button fullWidth variant="contained" endIcon={<FaSave />}>
-                                            บันทึก
+                                        <Button fullWidth variant="contained" endIcon={<FaSearch />}>
+                                            ค้นหา
                                         </Button>
                                     </Grid>
                                     <Grid item xs={3}>
@@ -78,10 +81,12 @@ function Plan({ handleettitlename }) {
                             </Grid>
                         </Grid>
                     </Box>
+
+                    <EnhancedTable />
                 </div>
             </div>
         </div>
     );
 }
 
-export default Plan;
+export default Planlist;

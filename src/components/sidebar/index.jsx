@@ -1,10 +1,10 @@
 import React from "react";
-import { FaTachometerAlt, FaGem, FaGithub} from 'react-icons/fa';
+import { FaTachometerAlt, FaGithub, FaRegLaughWink } from 'react-icons/fa';
 import {
   ProSidebar,
   Menu,
   MenuItem,
-  // SubMenu,
+  SubMenu,
   SidebarHeader,
   SidebarFooter,
   SidebarContent,
@@ -51,20 +51,28 @@ function SideNavBar({ image, collapsed, toggled, handleToggleSidebar }) {
               <div className="navLink">{"dashboard"}</div>
             </NavLink>
           </MenuItem>
-          <MenuItem icon={<FaGem />}>
+          {/* <MenuItem icon={<FaGem />}>
             <NavLink to="/plan">
               <div className="navLink">{"สร้างแผน"}</div>
             </NavLink>
-          </MenuItem>
-          {/* <SubMenu
-              suffix={<span className="badge yellow">3</span>}
-              title={"withSuffix"}
-              icon={<FaRegLaughWink />}
-            >
-              <MenuItem>{"submenu"} 1</MenuItem>
-              <MenuItem>{"submenu"} 2</MenuItem>
-              <MenuItem>{"submenu"} 3</MenuItem>
-            </SubMenu> */}
+          </MenuItem> */}
+          <SubMenu
+            // suffix={<span className="badge yellow">3</span>}
+            title={"แผน"}
+            icon={<FaRegLaughWink />}
+          >
+            <MenuItem>
+              <NavLink to="/plan">
+                <div className="navLink">{"สร้างแผน"}</div>
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink to="/planlist">
+                <div className="navLink">{"รายการแผน"}</div>
+              </NavLink>
+            </MenuItem>
+            {/* <MenuItem>{"submenu"} 3</MenuItem> */}
+          </SubMenu>
           {/* <SubMenu
               prefix={<span className="badge gray">3</span>}
               title={"withPrefix"}
