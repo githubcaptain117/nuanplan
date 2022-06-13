@@ -16,6 +16,7 @@ import {
   Plan,
   Planlist,
 } from "./components";
+import * as constants from "./constants";
 
 function App() {
   const [collapsed] = useState(false);
@@ -35,7 +36,7 @@ function App() {
     <>
       <div className={`app`}>
         <Router>
-          <div>
+          <div className={`sidebar-layout`}>
             <Sidebar
               image={image}
               collapsed={collapsed}
@@ -43,16 +44,19 @@ function App() {
               handleToggleSidebar={handleToggleSidebar}
             />
           </div>
-          <div className={`contain`}>
+          <div className={`navbar-layout`}>
             <Navbar titlename={titlename} />
+          </div>
+          <div className={`contain`}>
+          {/* <Navbar titlename={titlename} /> */}
             <main>
               <Routes>
-                <Route path="/nuanplan" element={<Home handleettitlename={handleettitlename} />} />
-                <Route path="/nuanplan/plan" element={<Plan handleettitlename={handleettitlename} />} />
-                <Route path="/nuanplan/planlist" element={<Planlist handleettitlename={handleettitlename} />} />
-                <Route path="/nuanplan/about" element={<About handleettitlename={handleettitlename} />} />
-                <Route path="/nuanplan/contact" element={<Contact handleettitlename={handleettitlename} />} />
-                <Route path="/nuanplan/blog" element={<Blog handleettitlename={handleettitlename} />}>
+                <Route path={`${constants.DEFUALT_URL_PATH}/dashboard`} element={<Home handleettitlename={handleettitlename} />} />
+                <Route path={`${constants.DEFUALT_URL_PATH}/plan`} element={<Plan handleettitlename={handleettitlename} />} />
+                <Route path={`${constants.DEFUALT_URL_PATH}/planlist`} element={<Planlist handleettitlename={handleettitlename} />} />
+                <Route path={`${constants.DEFUALT_URL_PATH}/about`} element={<About handleettitlename={handleettitlename} />} />
+                <Route path={`${constants.DEFUALT_URL_PATH}/contact`} element={<Contact handleettitlename={handleettitlename} />} />
+                <Route path={`${constants.DEFUALT_URL_PATH}/blog`} element={<Blog handleettitlename={handleettitlename} />}>
                   <Route path="" element={<Posts />} />
                   <Route path=":postSlug" element={<Post />} />
                 </Route>

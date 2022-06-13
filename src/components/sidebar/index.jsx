@@ -12,6 +12,7 @@ import {
 import 'react-pro-sidebar/dist/css/styles.css';
 import sidebarBg from '../../img/bgsidemenu.png';
 import { NavLink } from "react-router-dom";
+import * as constants from "../../constants";
 
 
 function SideNavBar({ image, collapsed, toggled, handleToggleSidebar }) {
@@ -47,7 +48,7 @@ function SideNavBar({ image, collapsed, toggled, handleToggleSidebar }) {
             icon={<FaTachometerAlt />}
             suffix={<span className="badge red">{"new"}</span>}
           >
-            <NavLink to="/nuanplan">
+            <NavLink to={`${constants.DEFUALT_URL_PATH}/dashboard`}>
               <div className="navLink">{"dashboard"}</div>
             </NavLink>
           </MenuItem>
@@ -62,12 +63,12 @@ function SideNavBar({ image, collapsed, toggled, handleToggleSidebar }) {
             icon={<FaRegLaughWink />}
           >
             <MenuItem>
-              <NavLink to="/nuanplan/plan">
+              <NavLink to={`${constants.DEFUALT_URL_PATH}/plan`}>
                 <div className="navLink">{"สร้างแผน"}</div>
               </NavLink>
             </MenuItem>
             <MenuItem>
-              <NavLink to="/nuanplan/planlist">
+              <NavLink to={`${constants.DEFUALT_URL_PATH}/planlist`}>
                 <div className="navLink">{"รายการแผน"}</div>
               </NavLink>
             </MenuItem>

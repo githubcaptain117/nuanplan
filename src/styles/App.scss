@@ -26,8 +26,23 @@ body {
   display: flex;
   position: relative;
 
+  .sidebar-layout {
+    height: 100%;
+    position: fixed;
+  }
+
+  .navbar-layout {
+    width: calc(100% - 270px);
+    position: fixed;
+    margin-left: 270px;
+  }
+
   .contain {
+    margin-left: 270px;
+    margin-top: 50px;
     width: 100%;
+    overflow-y: auto;
+    // height: calc(100% - 50px);
   }
 
   .btn-toggle {
@@ -90,7 +105,7 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    // overflow-y: auto;
 
     header {
       margin-bottom: 40px;
@@ -227,15 +242,16 @@ body {
 .navbar-customize {
   background-color: #1d1d1d;
   height: 50px;
+  width: 100%;
 }
 
 .navbar-font {
   color: #fff;
 }
 
-.sideNavBar-customize {
-  // background-color: #2FA5D8;
-  .navLink {
-    color: #fff;
-  }
-}
+// .sideNavBar-customize {
+//   // background-color: #2FA5D8;
+//   .navLink {
+//     color: red;
+//   }
+// }

@@ -2,6 +2,8 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { NavLink } from "react-router-dom";
+import * as constants from "../../constants";
+
 const Navbar = ({titlename}) => {
   const [pagename, setpagename] = useState("ชื่อหน้า");
 
@@ -29,12 +31,12 @@ const Navbar = ({titlename}) => {
                 </NavLink>
               </li> */}
               <li className="nav-item">
-                <NavLink className="nav-link navbar-font" to="/nuanplan/contact">
+                <NavLink className="nav-link navbar-font" to={`${constants.DEFUALT_URL_PATH}/contact`}>
                   Profile
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link navbar-font" to="/nuanplan/blog">
+                <NavLink className="nav-link navbar-font" to={`${constants.DEFUALT_URL_PATH}/blog`}>
                   Logout
                 </NavLink>
               </li>
