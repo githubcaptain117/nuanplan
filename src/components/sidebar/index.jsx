@@ -10,7 +10,7 @@ import {
   SidebarContent,
 } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
-// import sidebarBg from '../../img/bgsidemenu.png';
+import sidebarBg from '../../img/bgsidemenu.png';
 import { NavLink } from "react-router-dom";
 
 
