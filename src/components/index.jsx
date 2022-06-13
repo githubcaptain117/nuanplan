@@ -7,3 +7,4 @@ export { default as Contact } from "./pages/contact";
 export { default as Blog } from "./pages/blog/Blog";
 export { default as Posts } from "./pages/blog/Posts";
 export { default as Post } from "./pages/blog/Post";
+export { default as Plan } from "./pages/plan";

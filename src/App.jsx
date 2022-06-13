@@ -13,16 +13,23 @@ import {
   Blog,
   Posts,
   Post,
+  Plan,
 } from "./components";
 
 function App() {
   const [collapsed] = useState(false);
-  const [image] = useState(true);
+  const [image] = useState(false);
   const [toggled, setToggled] = useState(false);
+  const [titlename, settitlename] = useState("Test1");
 
   const handleToggleSidebar = (value) => {
     setToggled(value);
   };
+
+  const handleettitlename = (name) => {
+    settitlename(name);
+  }
+
   return (
     <>
       <div className={`app`}>
@@ -36,13 +43,14 @@ function App() {
             />
           </div>
           <div className={`contain`}>
-            <Navbar />
+            <Navbar titlename={titlename} />
             <main>
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/blog" element={<Blog />}>
+                <Route path="/" element={<Home handleettitlename={handleettitlename} />} />
+                <Route path="/plan" element={<Plan handleettitlename={handleettitlename} />} />
+                <Route path="/about" element={<About handleettitlename={handleettitlename}/>} />
+                <Route path="/contact" element={<Contact handleettitlename={handleettitlename}/>} />
+                <Route path="/blog" element={<Blog handleettitlename={handleettitlename}/>}>
                   <Route path="" element={<Posts />} />
                   <Route path=":postSlug" element={<Post />} />
                 </Route>

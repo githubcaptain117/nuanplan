@@ -1,34 +1,41 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import { NavLink } from "react-router-dom";
-const Navbar = () => {
+const Navbar = ({titlename}) => {
+  const [pagename, setpagename] = useState("ชื่อหน้า");
+
+  useEffect(() => {
+    setpagename(titlename);
+  }, [titlename]);
+
   return (
     <div className="navigation">
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
+      <nav className="navbar navbar-expand navbar-dark bg-dark navbar-customize">
+        <div className='brandheader'>
+          {pagename}
+        </div>
         <div className="container">
-          <NavLink className="navbar-brand" to="/">
-            React Multi-Page Website
-          </NavLink>
-          <div>
+          <div className='brandmenu'>
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink className="nav-link" to="/">
                   Home
-                  {/* <span className="sr-only">(current)</span> */}
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/about">
                   About
                 </NavLink>
-              </li>
+              </li> */}
               <li className="nav-item">
-                <NavLink className="nav-link" to="/contact">
-                  Contact
+                <NavLink className="nav-link navbar-font" to="/contact">
+                  Profile
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/blog">
-                  Blog
+                <NavLink className="nav-link navbar-font" to="/blog">
+                  Logout
                 </NavLink>
               </li>
             </ul>

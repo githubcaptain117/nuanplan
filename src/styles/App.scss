@@ -9,6 +9,7 @@ $icon-bg-color: rgba(255, 255, 255, 0.05);
 $icon-size: 35px;
 
 @import '~react-pro-sidebar/dist/scss/styles.scss';
+
 body {
   margin: 0;
   height: 100vh;
@@ -26,7 +27,7 @@ body {
   position: relative;
 
   .contain {
-      width: 100%;
+    width: 100%;
   }
 
   .btn-toggle {
@@ -48,6 +49,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
     .sidebar-btn {
       transition: width 0.3s;
       width: 150px;
@@ -63,10 +65,12 @@ body {
       justify-content: center;
       text-overflow: ellipsis;
       overflow: hidden;
+
       span {
         margin-left: 5px;
         font-size: 13px;
       }
+
       &:hover {
         color: $highlight-color;
       }
@@ -87,9 +91,11 @@ body {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+
     header {
       margin-bottom: 40px;
       border-bottom: 1px solid #efefef;
+
       h1 {
         display: flex;
         align-items: center;
@@ -101,17 +107,21 @@ body {
       margin-top: auto;
       color: #888;
       text-align: center;
+
       a {
         text-decoration: none;
         color: #888;
+
         &:hover {
           text-decoration: underline;
         }
       }
     }
   }
+
   .social-bagdes {
     margin-top: 10px;
+
     img {
       margin: 5px;
     }
@@ -122,7 +132,8 @@ body {
     margin-bottom: 24px;
     font-size: 14px;
     color: #545454;
-    > span {
+
+    >span {
       margin-left: 10px;
     }
   }
@@ -136,13 +147,16 @@ body {
         transform: translateX(20px);
       }
     }
+
     .block {
       direction: rtl;
-      > span {
+
+      >span {
         margin-left: 0;
         margin-right: 10px;
       }
     }
+
     .sidebar-btn-wrapper {
       .sidebar-btn {
         span {
@@ -155,12 +169,14 @@ body {
 
   @media (max-width: 767.98px) {
     overflow-x: hidden;
+
     header {
       h1 {
         font-size: 24px;
       }
     }
   }
+
   @media (max-width: $breakpoint-md) {
     .btn-toggle {
       display: flex;
@@ -179,16 +195,47 @@ body {
   font-size: 9px;
   letter-spacing: 1px;
   border-radius: 15px;
+
   &.red {
     color: #ffffff;
     background: #d63030;
   }
+
   &.gray {
     color: #ffffff;
     background: #777777;
   }
+
   &.yellow {
     color: #000000;
     background: #ffd331;
+  }
+}
+
+.brandheader {
+  color: #fff;
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.brandmenu {
+  position: absolute;
+  right: 50px;
+}
+
+.navbar-customize {
+  background-color: #1d1d1d;
+  height: 50px;
+}
+
+.navbar-font {
+  color: #fff;
+}
+
+.sideNavBar-customize {
+  // background-color: #2FA5D8;
+  .navLink {
+    color: #fff;
   }
 }
