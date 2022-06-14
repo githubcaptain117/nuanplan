@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/nuanplan/static/css/main.00908543.css",
-    "main.js": "/nuanplan/static/js/main.6bd69ee4.js",
+    "main.css": "/nuanplan/static/css/main.6027f82c.css",
+    "main.js": "/nuanplan/static/js/main.12ecac4e.js",
     "static/js/787.fd637e9e.chunk.js": "/nuanplan/static/js/787.fd637e9e.chunk.js",
     "index.html": "/nuanplan/index.html",
-    "main.00908543.css.map": "/nuanplan/static/css/main.00908543.css.map",
-    "main.6bd69ee4.js.map": "/nuanplan/static/js/main.6bd69ee4.js.map",
+    "main.6027f82c.css.map": "/nuanplan/static/css/main.6027f82c.css.map",
+    "main.12ecac4e.js.map": "/nuanplan/static/js/main.12ecac4e.js.map",
     "787.fd637e9e.chunk.js.map": "/nuanplan/static/js/787.fd637e9e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.00908543.css",
-    "static/js/main.6bd69ee4.js"
+    "static/css/main.6027f82c.css",
+    "static/js/main.12ecac4e.js"
   ]
 }
