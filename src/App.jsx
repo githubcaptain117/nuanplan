@@ -48,9 +48,10 @@ function App() {
             <Navbar titlename={titlename} />
           </div>
           <div className={`contain`}>
-          {/* <Navbar titlename={titlename} /> */}
+            {/* <Navbar titlename={titlename} /> */}
             <main>
               <Routes>
+                <Route path={`${constants.DEFUALT_URL_PATH}/`} element={<Home handleettitlename={handleettitlename} />} />
                 <Route path={`${constants.DEFUALT_URL_PATH}/dashboard`} element={<Home handleettitlename={handleettitlename} />} />
                 <Route path={`${constants.DEFUALT_URL_PATH}/plan`} element={<Plan handleettitlename={handleettitlename} />} />
                 <Route path={`${constants.DEFUALT_URL_PATH}/planlist`} element={<Planlist handleettitlename={handleettitlename} />} />

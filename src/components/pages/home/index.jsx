@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import {
@@ -15,6 +15,7 @@ import {
 } from 'chart.js';
 import { Bar, Pie, Doughnut, Line } from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
+import { useCallback } from "react";
 
 ChartJS.register(
   ArcElement,
@@ -29,6 +30,7 @@ ChartJS.register(
 );
 
 function Home({ handleettitlename }) {
+  let ref = useRef(null);
 
   useEffect(() => {
     handleettitlename("Dashboard");
@@ -66,7 +68,7 @@ function Home({ handleettitlename }) {
       ],
     };
 
-    return (<React.Fragment><Bar options={options} data={data} /></React.Fragment>);
+    return (<React.Fragment><Bar ref={ref} options={options} data={data} /></React.Fragment>);
   }
 
   const Piechart = () => {
@@ -168,31 +170,26 @@ function Home({ handleettitlename }) {
     return (<React.Fragment><Line options={options} data={data} /></React.Fragment>);
   }
 
+  const downloadImage = useCallback(() => {
+    console.log("downloadIamge")
+    const link = document.createElement("a");
+    link.download = "chart.png";
+    link.href = ref.current.toBase64Image();
+    link.click();
+  }, []);
+
+  // const downloadIamge = () => {
+  //   console.log("downloadIamge")
+  //   const link = document.createElement("a");
+  //   link.download = "chart.png";
+  //   link.href = ref.current.toBase64Image();
+  //   link.click();
+  // };
+
   return (
-    // <div className="home">
-    //   <div className="container">
-    //     <div className="row align-items-center my-5">
-    //       <div className="col-lg-7">
-    //         <img
-    //           className="img-fluid rounded mb-4 mb-lg-0"
-    //           src="http://placehold.it/900x400"
-    //           alt=""
-    //         />
-    //       </div>
-    //       <div className="col-lg-5">
-    //         <h1 className="font-weight-light">Home</h1>
-    //         <p>
-    //           Lorem Ipsum is simply dummy text of the printing and typesetting
-    //           industry. Lorem Ipsum has been the industry's standard dummy text
-    //           ever since the 1500s, when an unknown printer took a galley of
-    //           type and scrambled it to make a type specimen book.
-    //         </p>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
     <div className="home">
       <div className="container">
+      <button type="button" onClick={downloadImage}>Download BarChart</button>
         <div className="row align-items-center my-5">
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={3}>
