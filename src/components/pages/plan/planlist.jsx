@@ -6,6 +6,20 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import { Button } from "@mui/material";
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    ArcElement,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+import { faker } from '@faker-js/faker';
 
 
 //---------------------------- icon
@@ -13,19 +27,58 @@ import { FaSearch, FaTimesCircle } from "react-icons/fa";
 import EnhancedTable from "../../table/plan/tableplanlist";
 
 
-// const Item = styled(Paper)(({ theme }) => ({
-//     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-//     ...theme.typography.body2,
-//     padding: theme.spacing(1),
-//     textAlign: 'center',
-//     color: theme.palette.text.secondary,
-// }));
+ChartJS.register(
+    ArcElement,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+);
 
 function Planlist({ handleettitlename }) {
 
     useEffect(() => {
         handleettitlename("รายการแผน");
     })
+
+    const Barchart = () => {
+        const options = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Chart.js Bar Chart',
+                },
+            },
+        };
+
+        const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+        const data = {
+            labels,
+            datasets: [
+                {
+                    label: 'Dataset 1',
+                    data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                },
+                {
+                    label: 'Dataset 2',
+                    data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+                    backgroundColor: 'rgba(53, 162, 235, 0.5)',
+                },
+            ],
+        };
+
+        return (<React.Fragment><Bar options={options} data={data} /></React.Fragment>);
+    }
 
     const FormRow = () => {
         return (
@@ -81,7 +134,7 @@ function Planlist({ handleettitlename }) {
                             </Grid>
                         </Grid>
                     </Box>
-
+                    <Barchart />
                     <EnhancedTable />
                 </div>
             </div>

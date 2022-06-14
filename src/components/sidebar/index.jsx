@@ -62,17 +62,23 @@ function SideNavBar({ image, collapsed, toggled, handleToggleSidebar }) {
             title={"แผน"}
             icon={<FaRegLaughWink />}
           >
-            <MenuItem>
-              <NavLink to={`${constants.DEFUALT_URL_PATH}/plan`}>
-                <div className="navLink">{"สร้างแผน"}</div>
-              </NavLink>
-            </MenuItem>
-            <MenuItem>
-              <NavLink to={`${constants.DEFUALT_URL_PATH}/planlist`}>
-                <div className="navLink">{"รายการแผน"}</div>
-              </NavLink>
-            </MenuItem>
-            {/* <MenuItem>{"submenu"} 3</MenuItem> */}
+            <SubMenu
+              // suffix={<span className="badge yellow">3</span>}
+              title={"โครงการ/งาน"}
+              icon={<FaRegLaughWink />}
+            >
+              <MenuItem>
+                <NavLink to={`${constants.DEFUALT_URL_PATH}/plan`}>
+                  <div className="navLink">{"สร้าง"}</div>
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <NavLink to={`${constants.DEFUALT_URL_PATH}/planlist`}>
+                  <div className="navLink">{"รายการ"}</div>
+                </NavLink>
+              </MenuItem>
+              {/* <MenuItem>{"submenu"} 3</MenuItem> */}
+            </SubMenu>
           </SubMenu>
           {/* <SubMenu
               prefix={<span className="badge gray">3</span>}
