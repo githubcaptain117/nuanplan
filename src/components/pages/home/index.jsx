@@ -15,7 +15,7 @@ import {
 } from 'chart.js';
 import { Bar, Pie, Doughnut, Line } from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
-import { useCallback } from "react";
+// import { useCallback } from "react";
 import jsPDF from "jspdf";
 import 'jspdf-autotable'
 

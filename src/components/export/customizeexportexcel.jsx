@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 // import { render } from 'react-dom';
 import { AgGridReact } from 'ag-grid-react';
 // import { AgChartsReact } from 'ag-charts-react';
@@ -37,7 +37,7 @@ function GridExample() {
     const gridRef = useRef();
     let barchartRef = useRef(null);
     const containerStyle = useMemo(() => ({ width: '100%', height: '100%' }), []);
-    const gridStyle = useMemo(() => ({ height: '100%', width: '100%' }), []);
+    // const gridStyle = useMemo(() => ({ height: '100%', width: '100%' }), []);
     const [rowData] = useState([
         { make: 'Toyota', model: 'Celica', price: 35000 },
         { make: 'Ford', model: 'Mondeo', price: 32000 },
@@ -57,16 +57,16 @@ function GridExample() {
         return document.body;
     }, []);
 
-    const tagimg = () => {
-        return (
-            <React.Fragment>
-                <img
-                    alt={"test"}
-                    src={barchartRef.current.toBase64Image()}
-                />
-            </React.Fragment>
-        )
-    }
+    // const tagimg = () => {
+    //     return (
+    //         <React.Fragment>
+    //             <img
+    //                 alt={"test"}
+    //                 src={barchartRef.current.toBase64Image()}
+    //             />
+    //         </React.Fragment>
+    //     )
+    // }
 
     const [columnDefs] = useState([
         {
@@ -75,7 +75,7 @@ function GridExample() {
             minWidth: 250,
             width: 250,
             maxWidth: 250,
-            cellRenderer: tagimg,
+            // cellRenderer: tagimg,
         },
         { field: 'make' },
         { field: 'model' },
@@ -137,43 +137,43 @@ function GridExample() {
     //     }
     // };
 
-    function getBase64Image(url, callback) {
-        console.log('getBase64Image')
-        var xhr = new XMLHttpRequest();
-        xhr.onload = function () {
-            var reader = new FileReader();
-            reader.onloadend = function () {
-                console.log('reader.result: ' + reader.result)
-                callback(reader.result);
-            }
-            reader.readAsDataURL(xhr.response);
-        };
-        xhr.open('GET', url);
-        xhr.responseType = 'blob';
-        xhr.send();
-    }
+    // function getBase64Image(url, callback) {
+    //     console.log('getBase64Image')
+    //     var xhr = new XMLHttpRequest();
+    //     xhr.onload = function () {
+    //         var reader = new FileReader();
+    //         reader.onloadend = function () {
+    //             console.log('reader.result: ' + reader.result)
+    //             callback(reader.result);
+    //         }
+    //         reader.readAsDataURL(xhr.response);
+    //     };
+    //     xhr.open('GET', url);
+    //     xhr.responseType = 'blob';
+    //     xhr.send();
+    // }
 
-    const defaultExcelExportParams = {
-        addImageToCell: (rowIndex, column, value) => {
-            // if (rowIndex === 1 && column.colId === 'athlete') {
-            // let myCompanyLogo = null;
-            // getBase64Image('./bgsidemenu.png', function (dataUrl) {
-            //     console.log('dataUrl: ' + dataUrl)
-            //     myCompanyLogo = dataUrl;
-            // })
+    // const defaultExcelExportParams = {
+    //     addImageToCell: (rowIndex, column, value) => {
+    //         // if (rowIndex === 1 && column.colId === 'athlete') {
+    //         // let myCompanyLogo = null;
+    //         // getBase64Image('./bgsidemenu.png', function (dataUrl) {
+    //         //     console.log('dataUrl: ' + dataUrl)
+    //         //     myCompanyLogo = dataUrl;
+    //         // })
 
-            let myCompanyLogo = barchartRef.current.toBase64Image();
-            return {
-                image: {
-                    id: 'company_logo',
-                    base64: myCompanyLogo,
-                    imageType: 'png',
-                    fitCell: false
-                }
-            };
-            // }
-        }
-    };
+    //         let myCompanyLogo = barchartRef.current.toBase64Image();
+    //         return {
+    //             image: {
+    //                 id: 'company_logo',
+    //                 base64: myCompanyLogo,
+    //                 imageType: 'png',
+    //                 fitCell: false
+    //             }
+    //         };
+    //         // }
+    //     }
+    // };
 
     const Barchart = () => {
         const options = {
@@ -224,7 +224,7 @@ function GridExample() {
                             <div className="ag-theme-alpine" style={{ width: '100%', height: 500 }}>
                                 <AgGridReact
                                     ref={gridRef}
-                                    defaultExcelExportParams={defaultExcelExportParams}
+                                    // defaultExcelExportParams={defaultExcelExportParams}
                                     rowData={rowData}
                                     defaultColDef={defaultColDef}
                                     suppressExcelExport={true}
@@ -248,7 +248,7 @@ function GridExample() {
                         <textarea id="csvResult">
                             Click the Show CSV export content button to view exported CSV here
                         </textarea>
-                        <img id="chartimg" />
+                        <img id="chartimg" alt='test'/>
                     </div>
                 </div>
             </div>
