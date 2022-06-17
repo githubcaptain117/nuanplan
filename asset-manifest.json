@@ -1,15 +1,21 @@
 {
   "files": {
     "main.css": "/nuanplan/static/css/main.6027f82c.css",
-    "main.js": "/nuanplan/static/js/main.84e49ea9.js",
+    "main.js": "/nuanplan/static/js/main.afa9b37f.js",
+    "static/js/498.3975abe3.chunk.js": "/nuanplan/static/js/498.3975abe3.chunk.js",
+    "static/js/703.8d1c94ee.chunk.js": "/nuanplan/static/js/703.8d1c94ee.chunk.js",
+    "static/js/541.88f74e7a.chunk.js": "/nuanplan/static/js/541.88f74e7a.chunk.js",
     "static/js/787.fd637e9e.chunk.js": "/nuanplan/static/js/787.fd637e9e.chunk.js",
     "index.html": "/nuanplan/index.html",
     "main.6027f82c.css.map": "/nuanplan/static/css/main.6027f82c.css.map",
-    "main.84e49ea9.js.map": "/nuanplan/static/js/main.84e49ea9.js.map",
+    "main.afa9b37f.js.map": "/nuanplan/static/js/main.afa9b37f.js.map",
+    "498.3975abe3.chunk.js.map": "/nuanplan/static/js/498.3975abe3.chunk.js.map",
+    "703.8d1c94ee.chunk.js.map": "/nuanplan/static/js/703.8d1c94ee.chunk.js.map",
+    "541.88f74e7a.chunk.js.map": "/nuanplan/static/js/541.88f74e7a.chunk.js.map",
     "787.fd637e9e.chunk.js.map": "/nuanplan/static/js/787.fd637e9e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6027f82c.css",
-    "static/js/main.84e49ea9.js"
+    "static/js/main.afa9b37f.js"
   ]
 }
