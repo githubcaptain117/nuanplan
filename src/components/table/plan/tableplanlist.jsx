@@ -21,6 +21,9 @@ import Tooltip from '@mui/material/Tooltip';
 import { AiFillDelete, AiFillFilter } from 'react-icons/ai';
 import { visuallyHidden } from '@mui/utils';
 
+//---------------------------- icon
+import { FaEdit } from "react-icons/fa";
+
 function createData(name, calories, fat, carbs, protein) {
     return {
         name,
@@ -202,7 +205,7 @@ const EnhancedTableToolbar = (props) => {
 
             {numSelected > 0 ? (
                 <Tooltip title="Delete">
-                    <IconButton>
+                    <IconButton color="error">
                         <AiFillDelete />
                     </IconButton>
                 </Tooltip>
@@ -221,7 +224,7 @@ EnhancedTableToolbar.propTypes = {
     numSelected: PropTypes.number.isRequired,
 };
 
-export default function EnhancedTable() {
+export default function EnhancedTable({datarow}) {
     const [order, setOrder] = React.useState('asc');
     const [orderBy, setOrderBy] = React.useState('calories');
     const [selected, setSelected] = React.useState([]);
@@ -239,7 +242,7 @@ export default function EnhancedTable() {
 
     const handleSelectAllClick = (event) => {
         if (event.target.checked) {
-            const newSelecteds = rows.map((n) => n.name);
+            const newSelecteds = datarow.map((n) => n.name);
             setSelected(newSelecteds);
             return;
         }
@@ -283,7 +286,7 @@ export default function EnhancedTable() {
 
     // Avoid a layout jump when reaching the last page with empty rows.
     const emptyRows =
-        page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+        page > 0 ? Math.max(0, (1 + page) * rowsPerPage - datarow.length) : 0;
 
     return (
         <Box sx={{ width: '100%' }}>
@@ -301,28 +304,31 @@ export default function EnhancedTable() {
                             orderBy={orderBy}
                             onSelectAllClick={handleSelectAllClick}
                             onRequestSort={handleRequestSort}
-                            rowCount={rows.length}
+                            rowCount={datarow.length}
                         />
                         <TableBody>
                             {/* if you don't need to support IE11, you can replace the `stableSort` call with:
                  rows.slice().sort(getComparator(order, orderBy)) */}
-                            {stableSort(rows, getComparator(order, orderBy))
+                            {stableSort(datarow, getComparator(order, orderBy))
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map((row, index) => {
                                     const isItemSelected = isSelected(row.name);
                                     const labelId = `enhanced-table-checkbox-${index}`;
-
+                                    // console.log('row: ' + JSON.stringify(row))
                                     return (
                                         <TableRow
                                             hover
-                                            onClick={(event) => handleClick(event, row.name)}
+                                            // onClick={(event) => handleClick(event, row.name)}
                                             role="checkbox"
                                             aria-checked={isItemSelected}
                                             tabIndex={-1}
                                             key={row.name}
                                             selected={isItemSelected}
                                         >
-                                            <TableCell padding="checkbox">
+                                            <TableCell
+                                                onClick={(event) => handleClick(event, row.name)}
+                                                padding="checkbox"
+                                            >
                                                 <Checkbox
                                                     color="primary"
                                                     checked={isItemSelected}
@@ -336,6 +342,7 @@ export default function EnhancedTable() {
                                                 id={labelId}
                                                 scope="row"
                                                 padding="none"
+                                                onClick={(event) => handleClick(event, row.name)}
                                             >
                                                 {row.name}
                                             </TableCell>
@@ -343,6 +350,11 @@ export default function EnhancedTable() {
                                             <TableCell align="right">{row.fat}</TableCell>
                                             <TableCell align="right">{row.carbs}</TableCell>
                                             <TableCell align="right">{row.protein}</TableCell>
+                                            <TableCell align="right">
+                                                <IconButton aria-label="edit" color="primary">
+                                                    <FaEdit />
+                                                </IconButton>
+                                            </TableCell>
                                         </TableRow>
                                     );
                                 })}
@@ -361,7 +373,7 @@ export default function EnhancedTable() {
                 <TablePagination
                     rowsPerPageOptions={[10]}
                     component="div"
-                    count={rows.length}
+                    count={datarow.length}
                     rowsPerPage={rowsPerPage}
                     page={page}
                     onPageChange={handleChangePage}

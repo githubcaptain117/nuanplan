@@ -16,6 +16,8 @@ import {
 import { Bar, Pie, Doughnut, Line } from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
 import { useCallback } from "react";
+import jsPDF from "jspdf";
+import 'jspdf-autotable'
 
 ChartJS.register(
   ArcElement,
@@ -30,7 +32,10 @@ ChartJS.register(
 );
 
 function Home({ handleettitlename }) {
-  let ref = useRef(null);
+  let ref1 = useRef(null);
+  let ref2 = useRef(null);
+  let ref3 = useRef(null);
+  let ref4 = useRef(null);
 
   useEffect(() => {
     handleettitlename("Dashboard");
@@ -68,7 +73,7 @@ function Home({ handleettitlename }) {
       ],
     };
 
-    return (<React.Fragment><Bar ref={ref} options={options} data={data} /></React.Fragment>);
+    return (<React.Fragment><Bar ref={ref1} options={options} data={data} /></React.Fragment>);
   }
 
   const Piechart = () => {
@@ -99,7 +104,7 @@ function Home({ handleettitlename }) {
       ],
     };
 
-    return (<React.Fragment><Pie data={data} /></React.Fragment>);
+    return (<React.Fragment><Pie ref={ref2} data={data} /></React.Fragment>);
   }
 
   const Doughnutchart = () => {
@@ -130,7 +135,7 @@ function Home({ handleettitlename }) {
       ],
     };
 
-    return (<React.Fragment><Doughnut data={data} /></React.Fragment>);
+    return (<React.Fragment><Doughnut ref={ref3} data={data} /></React.Fragment>);
   }
 
   const Linechart = () => {
@@ -167,16 +172,37 @@ function Home({ handleettitlename }) {
       ],
     };
 
-    return (<React.Fragment><Line options={options} data={data} /></React.Fragment>);
+    return (<React.Fragment><Line ref={ref4} options={options} data={data} /></React.Fragment>);
   }
 
-  const downloadImage = useCallback(() => {
-    console.log("downloadIamge")
-    const link = document.createElement("a");
-    link.download = "chart.png";
-    link.href = ref.current.toBase64Image();
-    link.click();
-  }, []);
+  // const downloadImage = useCallback(() => {
+  //   console.log("downloadIamge")
+  //   const link = document.createElement("a");
+  //   link.download = "chart.png";
+  //   link.href = ref.current.toBase64Image();
+  //   link.click();
+  // }, []);
+
+  const downloadImage = () => {
+    const unit = "pt";
+    const size = "A4"; // Use A1, A2, A3 or A4
+    const orientation = "p"; // portrait or landscape
+
+    const marginLeft = 40;
+    const doc = new jsPDF(orientation, unit, size);
+
+    doc.setFontSize(15);
+
+    const title = "My Awesome Report";
+
+    doc.text(title, marginLeft, 40);
+    doc.addImage(ref1.current.toBase64Image(), 'png', 40, 50, 515, 250);
+    doc.addImage(ref2.current.toBase64Image(), 'png', 40, 310, 515, 250);
+    doc.addImage(ref3.current.toBase64Image(), 'png', 40, 570, 515, 250);
+    doc.addPage(size, orientation);
+    doc.addImage(ref4.current.toBase64Image(), 'png', 40, 50, 515, 250);
+    doc.save("report.pdf")
+}
 
   // const downloadIamge = () => {
   //   console.log("downloadIamge")
@@ -189,7 +215,7 @@ function Home({ handleettitlename }) {
   return (
     <div className="home">
       <div className="container">
-      <button type="button" onClick={downloadImage}>Download BarChart</button>
+      <button type="button" onClick={downloadImage}>Download Chart</button>
         <div className="row align-items-center my-5">
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={3}>
