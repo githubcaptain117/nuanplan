@@ -17,6 +17,7 @@
     "ag-grid-react": "^27.3.0",
     "bootstrap": "^5.2.0-beta1",
     "chart.js": "^3.8.0",
+    "docx": "^7.3.0",
     "gh-pages": "^4.0.0",
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.5.25",

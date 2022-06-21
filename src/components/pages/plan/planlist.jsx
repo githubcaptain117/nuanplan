@@ -21,7 +21,8 @@ import { Bar } from 'react-chartjs-2';
 // import { faker } from '@faker-js/faker';
 import EnhancedTable from "../../table/plan/tableplanlist";
 import jsPDF from "jspdf";
-import 'jspdf-autotable'
+import 'jspdf-autotable';
+import { Document, Packer, Paragraph, TextRun, ImageRun } from "docx";
 
 //---------------------------- icon
 import { FaFileExport, FaSearch, FaTimesCircle } from "react-icons/fa";
@@ -175,6 +176,56 @@ function Planlist({ handleettitlename }) {
         doc.save("report.pdf")
     }
 
+    const exportEXCEL = () => {
+        
+    }
+
+    const exportDOCX = () => {
+        const doc = new Document({
+            sections: [{
+                properties: {},
+                children: [
+                    new Paragraph({
+                        children: [
+                            new TextRun("Hello World"),
+                            new TextRun({
+                                text: "Foo Bar",
+                                bold: true,
+                            }),
+                            new TextRun({
+                                text: "\tGithub is the best",
+                                bold: true,
+                            }),
+                        ],
+                    }),
+                    new Paragraph({
+                        children: [
+                            new ImageRun({
+                                data: ref.current.toBase64Image(),
+                                transformation: {
+                                    width: 100,
+                                    height: 100,
+                                    // flip: {
+                                    //     vertical: true,
+                                    // },
+                                },
+                            }),
+                        ],
+                    }),
+                ],
+            }],
+        });
+
+        // Used to export the file into a .docx file
+        Packer.toBlob(doc).then((blob) => {
+            console.log(blob)
+            const link = document.createElement("a");
+            link.download = "example.docx";
+            link.href = URL.createObjectURL(blob);
+            link.click();
+        });
+    }
+
     return (
         <div className="home">
             <div className="container">
@@ -226,12 +277,12 @@ function Planlist({ handleettitlename }) {
                                                     </Button>
                                                 </Grid>
                                                 <Grid item xs={6}>
-                                                    <Button fullWidth variant="contained" endIcon={<FaFileExport />}>
+                                                    <Button fullWidth variant="contained" endIcon={<FaFileExport />} onClick={exportEXCEL}>
                                                         EXCEL(เฉพาะข้อมูลเท่านั้น)
                                                     </Button>
                                                 </Grid>
                                                 <Grid item xs={2}>
-                                                    <Button fullWidth variant="contained" endIcon={<FaFileExport />}>
+                                                    <Button fullWidth variant="contained" endIcon={<FaFileExport />} onClick={exportDOCX}>
                                                         WORD
                                                     </Button>
                                                 </Grid>
