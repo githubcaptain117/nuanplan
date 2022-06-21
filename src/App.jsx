@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter as  Routes, Route, HashRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import './styles/App.scss';
 import {
   Navbar,
