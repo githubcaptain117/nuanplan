@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "nuanplan",
-  "start_url": "http://www.nuanplan.com",
+  "start_url": "https://githubcaptain117.github.io/nuanplan/",
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
@@ -33,7 +33,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
