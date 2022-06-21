@@ -1,1 +1,1 @@
-export const DEFUALT_URL_PATH = "/nuanplan";
+export const DEFUALT_URL_PATH = "";
