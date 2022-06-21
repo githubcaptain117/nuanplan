@@ -56,7 +56,7 @@ function App() {
                 <Route path={`${constants.DEFUALT_URL_PATH}/plan`} element={<Plan handleettitlename={handleettitlename} />} />
                 <Route path={`${constants.DEFUALT_URL_PATH}/planlist`} element={<Planlist handleettitlename={handleettitlename} />} />
                 <Route path={`${constants.DEFUALT_URL_PATH}/about`} element={<About handleettitlename={handleettitlename} />} />
-                <Route path={`${constants.DEFUALT_URL_PATH}/contact`} element={<Contact handleettitlename={handleettitlename} />} />
+                <Route path={`${constants.DEFUALT_URL_PATH}/contact`} component={<Contact handleettitlename={handleettitlename} />} />
                 <Route path={`${constants.DEFUALT_URL_PATH}/blog`} element={<Blog handleettitlename={handleettitlename} />}>
                   <Route path="" element={<Posts />} />
                   <Route path=":postSlug" element={<Post />} />
