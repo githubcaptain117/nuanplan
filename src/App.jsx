@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as  Routes, Route, HashRouter } from "react-router-dom";
 import './styles/App.scss';
 import {
   Navbar,
@@ -16,7 +16,7 @@ import {
   Plan,
   Planlist,
 } from "./components";
-import * as constants from "./constants";
+// import * as constants from "./constants";
 
 function App() {
   const [collapsed] = useState(false);
@@ -35,7 +35,8 @@ function App() {
   return (
     <>
       <div className={`app`}>
-        <Router>
+        {/* <Router> */}
+          <HashRouter>
           <div className={`sidebar-layout`}>
             <Sidebar
               image={image}
@@ -51,21 +52,35 @@ function App() {
             {/* <Navbar titlename={titlename} /> */}
             <main>
               <Routes>
-                <Route path={`${constants.DEFUALT_URL_PATH}/`} element={<Home handleettitlename={handleettitlename} />} />
-                <Route path={`${constants.DEFUALT_URL_PATH}/dashboard`} element={<Home handleettitlename={handleettitlename} />} />
-                <Route path={`${constants.DEFUALT_URL_PATH}/plan`} element={<Plan handleettitlename={handleettitlename} />} />
-                <Route path={`${constants.DEFUALT_URL_PATH}/planlist`} element={<Planlist handleettitlename={handleettitlename} />} />
-                <Route path={`${constants.DEFUALT_URL_PATH}/about`} element={<About handleettitlename={handleettitlename} />} />
+              
+                {/* <Route path={`${constants.DEFUALT_URL_PATH}/`} component={<Home handleettitlename={handleettitlename} />} />
+                <Route path={`${constants.DEFUALT_URL_PATH}/dashboard`} component={<Home handleettitlename={handleettitlename} />} />
+                <Route path={`${constants.DEFUALT_URL_PATH}/plan`} component={<Plan handleettitlename={handleettitlename} />} />
+                <Route path={`${constants.DEFUALT_URL_PATH}/planlist`} component={<Planlist handleettitlename={handleettitlename} />} />
+                <Route path={`${constants.DEFUALT_URL_PATH}/about`} component={<About handleettitlename={handleettitlename} />} />
                 <Route path={`${constants.DEFUALT_URL_PATH}/contact`} component={<Contact handleettitlename={handleettitlename} />} />
-                <Route path={`${constants.DEFUALT_URL_PATH}/blog`} element={<Blog handleettitlename={handleettitlename} />}>
+                <Route path={`${constants.DEFUALT_URL_PATH}/blog`} component={<Blog handleettitlename={handleettitlename} />}>
+                  <Route path="" component={<Posts />} />
+                  <Route path=":postSlug" component={<Post />} />
+                </Route> */}
+
+                <Route path={`/`} element={<Home handleettitlename={handleettitlename} />} />
+                <Route path={`/dashboard`} element={<Home handleettitlename={handleettitlename} />} />
+                <Route path={`/plan`} element={<Plan handleettitlename={handleettitlename} />} />
+                <Route path={`/planlist`} element={<Planlist handleettitlename={handleettitlename} />} />
+                <Route path={`/about`} element={<About handleettitlename={handleettitlename} />} />
+                <Route path={`/contact`} element={<Contact handleettitlename={handleettitlename} />} />
+                <Route path={`/blog`} element={<Blog handleettitlename={handleettitlename} />}>
                   <Route path="" element={<Posts />} />
                   <Route path=":postSlug" element={<Post />} />
                 </Route>
+              
               </Routes>
               {/* <Footer /> */}
             </main>
           </div>
-        </Router>
+          </HashRouter>
+        {/* </Router> */}
       </div>
     </>
   );
