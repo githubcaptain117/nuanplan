@@ -15,4 +15,5 @@ export { default as Footer } from "./footer";
 export { default as GridExample } from "./export/customizeexportexcel";
 export { default as BasicSelect } from "./selects";
 export { default as MultipleSelectChip } from "./multiselects";
+export { default as CustomizedTables } from "./table/userinfo";
 

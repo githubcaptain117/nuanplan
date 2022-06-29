@@ -13,6 +13,7 @@ import Checkbox from '@mui/material/Checkbox';
 import {
     BasicSelect,
     MultipleSelectChip,
+    CustomizedTables,
 } from "../../index";
 
 //---------------------------- icon
@@ -153,6 +154,249 @@ function Plan({ handleettitlename }) {
                             <Grid container item spacing={3}>
                                 <React.Fragment>
                                     <Grid item xs={4}>
+                                        <BasicSelect labelname={"ด้านมาตรฐานสากล"} data={year} />
+                                    </Grid>
+                                    <Grid item xs={4}>
+                                        <BasicSelect labelname={"มาตรฐานสากล"} data={year} />
+                                    </Grid>
+                                    <Grid item xs={4}>
+                                        <FormControlLabel
+                                            value="start"
+                                            control={<Checkbox />}
+                                            label={"มาตรฐานการศึกษาชาติ"}
+                                            labelPlacement="end"
+                                        />
+                                        {/* </Grid>
+                                    <Grid item xs={2}> */}
+                                        <FormControlLabel
+                                            value="start"
+                                            control={<Checkbox />}
+                                            label={"มาตรฐานการศึกษาของสถานศึกษา"}
+                                            labelPlacement="end"
+                                        />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={8}>
+                                        <TextField
+                                            fullWidth
+                                            id="outlined-multiline-static"
+                                            label="หลักการและเหตุผล"
+                                            multiline
+                                            rows={4}
+                                        // defaultValue="Default Value"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={4}>
+
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={1}>
+                                        วัตถุประสงค์
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={4}>
+                                        <TextField
+                                            fullWidth
+                                            id="outlined-multiline-static"
+                                            label="ผลผลิต (outputs)"
+                                            multiline
+                                            rows={4}
+                                        // defaultValue="Default Value"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={4}>
+                                        <TextField
+                                            fullWidth
+                                            id="outlined-multiline-static"
+                                            label="ผลลัพธ์ (outcomes)"
+                                            multiline
+                                            rows={4}
+                                        // defaultValue="Default Value"
+                                        />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={1}>
+                                        เป้าหมาย
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={4}>
+                                        <TextField
+                                            fullWidth
+                                            id="outlined-multiline-static"
+                                            label="เชิงปริมาณ"
+                                            multiline
+                                            rows={4}
+                                        // defaultValue="Default Value"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={4}>
+                                        <TextField
+                                            fullWidth
+                                            id="outlined-multiline-static"
+                                            label="เชิงคุณภาพ"
+                                            multiline
+                                            rows={4}
+                                        // defaultValue="Default Value"
+                                        />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={4}>
+                                        <TextField fullWidth id="outlined-basic" label={"สถานที่ดำเนินการ"} variant="outlined" />
+                                    </Grid>
+                                    <Grid item xs={4}>
+                                        <TextField fullWidth id="outlined-basic" label={"ระยะเวลาดำเนินการ"} variant="outlined" />
+                                    </Grid>
+                                    <Grid item xs={4}>
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={2}>
+                                        การประเมินผล
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={4}>
+                                        <TextField
+                                            fullWidth
+                                            id="outlined-multiline-static"
+                                            label="ตัวชี้วัดความสำเร็จ"
+                                            multiline
+                                            rows={4}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={4}>
+                                        <TextField
+                                            fullWidth
+                                            id="outlined-multiline-static"
+                                            label="วิธีการประเมิน"
+                                            multiline
+                                            rows={4}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={4}>
+                                        <TextField
+                                            fullWidth
+                                            id="outlined-multiline-static"
+                                            label="เครื่องมือที่ใช้"
+                                            multiline
+                                            rows={4}
+                                        />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={8}>
+                                        <TextField
+                                            fullWidth
+                                            id="outlined-multiline-static"
+                                            label="ผลที่คาดว่าจะได้รับ"
+                                            multiline
+                                            rows={4}
+                                        // defaultValue="Default Value"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={4}>
+
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={4}>
+                                        <TextField fullWidth id="outlined-basic" label={"งบประมาณคุมโครงการตั้งไว้"} variant="outlined" />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={4}>
+                                        <BasicSelect labelname={"ผู้รับผิดชอบโครงการ"} data={year} />
+                                    </Grid>
+                                    <Grid item xs={1}>
+                                        <Button fullWidth variant="contained" endIcon={<FaSave />} size="large">
+                                            เลือก
+                                        </Button>
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={12}>
+                                        <CustomizedTables />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={4}>
+                                        <BasicSelect labelname={"ผู้เสนอโครงการ"} data={year} />
+                                    </Grid>
+                                    <Grid item xs={1}>
+                                        <Button fullWidth variant="contained" endIcon={<FaSave />} size="large">
+                                            เลือก
+                                        </Button>
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={12}>
+                                        <CustomizedTables />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={4}>
+                                        <BasicSelect labelname={"ผู้เห็นชอบโครงการ"} data={year} />
+                                    </Grid>
+                                    <Grid item xs={1}>
+                                        <Button fullWidth variant="contained" endIcon={<FaSave />} size="large">
+                                            เลือก
+                                        </Button>
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={12}>
+                                        <CustomizedTables />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={2}>
+                                        <TextField fullWidth id="outlined-basic" label={"ลำดับที่"} variant="outlined" />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            {/* <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={4}>
                                         <ValidationTextField
                                             fullWidth
                                             label="CSS validation style"
@@ -187,7 +431,7 @@ function Plan({ handleettitlename }) {
                                         />
                                     </Grid>
                                 </React.Fragment>
-                            </Grid>
+                            </Grid> */}
 
                             <Grid container item spacing={3}>
                                 <React.Fragment>
