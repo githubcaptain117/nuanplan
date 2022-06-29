@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import { styled } from '@mui/material/styles';
+// import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 // import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
@@ -18,7 +18,7 @@ import {
 
 //---------------------------- icon
 import { FaSave, FaTimesCircle } from "react-icons/fa";
-import { useState } from "react";
+// import { useState } from "react";
 
 
 // const Item = styled(Paper)(({ theme }) => ({
@@ -49,23 +49,23 @@ import { useState } from "react";
 //     },
 // });
 
-const ValidationTextField = styled(TextField)({
-    '& input:valid + fieldset': {
-        borderColor: 'green',
-        borderWidth: 2,
-    },
-    '& input:invalid + fieldset': {
-        borderColor: 'red',
-        borderWidth: 2,
-    },
-    '& input:valid:focus + fieldset': {
-        borderLeftWidth: 6,
-        padding: '4px !important', // override inline-style
-    },
-});
+// const ValidationTextField = styled(TextField)({
+//     '& input:valid + fieldset': {
+//         borderColor: 'green',
+//         borderWidth: 2,
+//     },
+//     '& input:invalid + fieldset': {
+//         borderColor: 'red',
+//         borderWidth: 2,
+//     },
+//     '& input:valid:focus + fieldset': {
+//         borderLeftWidth: 6,
+//         padding: '4px !important', // override inline-style
+//     },
+// });
 
 function Plan({ handleettitlename }) {
-    const [textval, settextval] = useState('');
+    // const [textval, settextval] = useState('');
 
     useEffect(() => {
         handleettitlename("สร้างแผน");
@@ -101,9 +101,9 @@ function Plan({ handleettitlename }) {
     //     );
     // }
 
-    const onchangehandletextval = (e) => {
-        settextval(e.target.value)
-    }
+    // const onchangehandletextval = (e) => {
+    //     settextval(e.target.value)
+    // }
 
     return (
         <div className="home">
