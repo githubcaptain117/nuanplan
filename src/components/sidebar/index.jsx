@@ -79,6 +79,24 @@ function SideNavBar({ image, collapsed, toggled, handleToggleSidebar }) {
               </MenuItem>
               {/* <MenuItem>{"submenu"} 3</MenuItem> */}
             </SubMenu>
+
+            <SubMenu
+              // suffix={<span className="badge yellow">3</span>}
+              title={"จัดทำกิจกรรม"}
+              icon={<FaRegLaughWink />}
+            >
+              <MenuItem>
+                <NavLink to={`${constants.DEFUALT_URL_PATH}/activity`}>
+                  <div className="navLink">{"สร้าง"}</div>
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
+                <NavLink to={`${constants.DEFUALT_URL_PATH}/activitylist`}>
+                  <div className="navLink">{"รายการ"}</div>
+                </NavLink>
+              </MenuItem>
+              {/* <MenuItem>{"submenu"} 3</MenuItem> */}
+            </SubMenu>
           </SubMenu>
           {/* <SubMenu
               prefix={<span className="badge gray">3</span>}

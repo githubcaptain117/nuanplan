@@ -15,6 +15,8 @@ import {
   Post,
   Plan,
   Planlist,
+  Activity,
+  Activitylist,
 } from "./components";
 import * as constants from "./constants";
 
@@ -57,6 +59,8 @@ function App() {
                 <Route path={`${constants.DEFUALT_URL_PATH}/dashboard`} element={<Home handleettitlename={handleettitlename} />} />
                 <Route path={`${constants.DEFUALT_URL_PATH}/plan`} element={<Plan handleettitlename={handleettitlename} />} />
                 <Route path={`${constants.DEFUALT_URL_PATH}/planlist`} element={<Planlist handleettitlename={handleettitlename} />} />
+                <Route path={`${constants.DEFUALT_URL_PATH}/activity`} element={<Activity handleettitlename={handleettitlename} />} />
+                <Route path={`${constants.DEFUALT_URL_PATH}/activitylist`} element={<Activitylist handleettitlename={handleettitlename} />} />
                 <Route path={`${constants.DEFUALT_URL_PATH}/about`} element={<About handleettitlename={handleettitlename} />} />
                 <Route path={`${constants.DEFUALT_URL_PATH}/contact`} element={<Contact handleettitlename={handleettitlename} />} />
                 <Route path={`${constants.DEFUALT_URL_PATH}/blog`} element={<Blog handleettitlename={handleettitlename} />}>
