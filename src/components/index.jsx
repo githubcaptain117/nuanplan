@@ -20,4 +20,5 @@ export { default as MultipleSelectChip } from "./multiselects";
 export { default as CustomizedTables } from "./table/userinfo";
 export { default as RowRadioButtons } from "./rowradio";
 export { default as ControllableStates } from "./selectsearch";
+export { default as DatePickers } from "./datepicker";
 

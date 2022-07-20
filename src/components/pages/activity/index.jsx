@@ -16,6 +16,7 @@ import {
     CustomizedTables,
     RowRadioButtons,
     ControllableStates,
+    DatePickers,
 } from "../../index";
 
 //---------------------------- icon
@@ -156,25 +157,6 @@ function Activity({ handleettitlename }) {
                             <Grid container item spacing={3}>
                                 <React.Fragment>
                                     <Grid item xs={4}>
-                                        <BasicSelect labelname={"ผู้รับผิดชอบ"} data={year} />
-                                    </Grid>
-                                    <Grid item xs={1}>
-                                        <Button fullWidth variant="contained" endIcon={<FaSave />} size="large">
-                                            เลือก
-                                        </Button>
-                                    </Grid>
-                                </React.Fragment>
-                            </Grid>
-                            <Grid container item spacing={3}>
-                                <React.Fragment>
-                                    <Grid item xs={12}>
-                                        <CustomizedTables />
-                                    </Grid>
-                                </React.Fragment>
-                            </Grid>
-                            <Grid container item spacing={3}>
-                                <React.Fragment>
-                                    <Grid item xs={4}>
                                         <BasicSelect labelname={"หน่วยงาน"} data={year} />
                                     </Grid>
                                     <Grid item xs={1}>
@@ -195,6 +177,25 @@ function Activity({ handleettitlename }) {
                                 <React.Fragment>
                                     <Grid item xs={4}>
                                         <BasicSelect labelname={"หน่วยงานย่อย"} data={year} />
+                                    </Grid>
+                                    <Grid item xs={1}>
+                                        <Button fullWidth variant="contained" endIcon={<FaSave />} size="large">
+                                            เลือก
+                                        </Button>
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={12}>
+                                        <CustomizedTables />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={4}>
+                                        <BasicSelect labelname={"ผู้รับผิดชอบ"} data={year} />
                                     </Grid>
                                     <Grid item xs={1}>
                                         <Button fullWidth variant="contained" endIcon={<FaSave />} size="large">
@@ -281,23 +282,197 @@ function Activity({ handleettitlename }) {
                             </Grid>
                             <Grid container item spacing={3}>
                                 <React.Fragment>
+                                    <Grid item xs={4}>
+                                        <div style={{ width: '100%', textAlign: "center" }}>
+                                            <label>ติดตามงาน</label>
+                                        </div>
+                                    </Grid>
+                                    <Grid item xs={3}>
+
+                                    </Grid>
+                                    <Grid item xs={4}>
+                                        <div style={{ width: '100%', textAlign: "center" }}>
+                                            <label>ปฏิทินปฏิบัติงาน</label>
+                                        </div>
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
                                     <Grid item xs={2}>
-                                        การประเมินผล
+                                        <DatePickers
+                                            labelname={"วันที่ทำแผนกิจกรรม"}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <DatePickers
+                                            labelname={"ถึงวันที่"}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={3}>
+                                        <TextField fullWidth id="outlined-basic" label={"จำนวนวันเตือนก่อนถึงกำหนด "} />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <DatePickers
+                                            labelname={"วันที่ปฏิบัติกิจกรรม"}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <DatePickers
+                                            labelname={"ถึงวันที่"}
+                                        />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={12}>
+                                        <div style={{ width: '100%', textAlign: "center" }}>
+                                            <label>-- ขั้นตอนการดำเนินงาน --</label>
+                                        </div>
                                     </Grid>
                                 </React.Fragment>
                             </Grid>
                             <Grid container item spacing={3}>
                                 <React.Fragment>
-                                    <Grid item xs={4}>
+                                    <Grid item xs={3}>
+                                    </Grid>
+                                    <Grid item xs={3}>
+                                        <div style={{ width: '100%', textAlign: "center" }}>
+                                            <label>การดำเนินงาน</label>
+                                        </div>
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <div style={{ width: '100%', textAlign: "center" }}>
+                                            <label>ระยะเวลา</label>
+                                        </div>
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <div style={{ width: '100%', textAlign: "center" }}>
+                                            <label>สถานที่</label>
+                                        </div>
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <div style={{ width: '100%', textAlign: "center" }}>
+                                            <label>ผู้รับผิดชอบ</label>
+                                        </div>
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={3}>
+                                        <div style={{ width: '100%', textAlign: "center" }}>
+                                            <label>(P) ขั้นเตรียมการ</label>
+                                        </div>
+                                    </Grid>
+                                    <Grid item xs={3}>
+                                        <TextField fullWidth id="outlined-basic" label={" "} />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <TextField fullWidth id="outlined-basic" label={" "} />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <TextField fullWidth id="outlined-basic" label={" "} />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <TextField fullWidth id="outlined-basic" label={" "} />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={3}>
+                                        <div style={{ width: '100%', textAlign: "center" }}>
+                                            <label>(D) ขั้นดำเนินการ</label>
+                                        </div>
+                                    </Grid>
+                                    <Grid item xs={3}>
+                                        <TextField fullWidth id="outlined-basic" label={" "} />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <TextField fullWidth id="outlined-basic" label={" "} />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <TextField fullWidth id="outlined-basic" label={" "} />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <TextField fullWidth id="outlined-basic" label={" "} />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={3}>
+                                        <div style={{ width: '100%', textAlign: "center" }}>
+                                            <label>(C) ขั้นติดตามประเมินผล</label>
+                                        </div>
+                                    </Grid>
+                                    <Grid item xs={3}>
+                                        <TextField fullWidth id="outlined-basic" label={" "} />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <TextField fullWidth id="outlined-basic" label={" "} />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <TextField fullWidth id="outlined-basic" label={" "} />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <TextField fullWidth id="outlined-basic" label={" "} />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={3}>
+                                        <div style={{ width: '100%', textAlign: "center" }}>
+                                            <label>(A) ขั้นปรับปรุงแก้ไข</label>
+                                        </div>
+                                    </Grid>
+                                    <Grid item xs={3}>
+                                        <TextField fullWidth id="outlined-basic" label={" "} />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <TextField fullWidth id="outlined-basic" label={" "} />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <TextField fullWidth id="outlined-basic" label={" "} />
+                                    </Grid>
+                                    <Grid item xs={2}>
+                                        <TextField fullWidth id="outlined-basic" label={" "} />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={2}>
+                                        การติดตามประเมินผล
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={3}>
                                         <TextField
                                             fullWidth
                                             id="outlined-multiline-static"
-                                            label="ตัวชี้วัดความสำเร็จ"
+                                            label="การประเมินผล"
                                             multiline
                                             rows={4}
                                         />
                                     </Grid>
-                                    <Grid item xs={4}>
+                                    <Grid item xs={3}>
+                                        <TextField
+                                            fullWidth
+                                            id="outlined-multiline-static"
+                                            label="ตัวชี้วัดความสำเร็จ (ผลลัพธ์)"
+                                            multiline
+                                            rows={4}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={3}>
                                         <TextField
                                             fullWidth
                                             id="outlined-multiline-static"
@@ -306,7 +481,7 @@ function Activity({ handleettitlename }) {
                                             rows={4}
                                         />
                                     </Grid>
-                                    <Grid item xs={4}>
+                                    <Grid item xs={3}>
                                         <TextField
                                             fullWidth
                                             id="outlined-multiline-static"
@@ -336,65 +511,18 @@ function Activity({ handleettitlename }) {
                             </Grid>
                             <Grid container item spacing={3}>
                                 <React.Fragment>
+                                    <Grid item xs={8}>
+                                        <TextField
+                                            fullWidth
+                                            id="outlined-multiline-static"
+                                            label="สถานที่ดำเนินการ"
+                                            multiline
+                                            rows={4}
+                                        // defaultValue="Default Value"
+                                        />
+                                    </Grid>
                                     <Grid item xs={4}>
-                                        <TextField fullWidth id="outlined-basic" label={"งบประมาณคุมโครงการตั้งไว้"} variant="outlined" />
-                                    </Grid>
-                                </React.Fragment>
-                            </Grid>
-                            <Grid container item spacing={3}>
-                                <React.Fragment>
-                                    <Grid item xs={4}>
-                                        <BasicSelect labelname={"ผู้รับผิดชอบโครงการ"} data={year} />
-                                    </Grid>
-                                    <Grid item xs={1}>
-                                        <Button fullWidth variant="contained" endIcon={<FaSave />} size="large">
-                                            เลือก
-                                        </Button>
-                                    </Grid>
-                                </React.Fragment>
-                            </Grid>
-                            <Grid container item spacing={3}>
-                                <React.Fragment>
-                                    <Grid item xs={12}>
-                                        <CustomizedTables />
-                                    </Grid>
-                                </React.Fragment>
-                            </Grid>
-                            <Grid container item spacing={3}>
-                                <React.Fragment>
-                                    <Grid item xs={4}>
-                                        <BasicSelect labelname={"ผู้เสนอโครงการ"} data={year} />
-                                    </Grid>
-                                    <Grid item xs={1}>
-                                        <Button fullWidth variant="contained" endIcon={<FaSave />} size="large">
-                                            เลือก
-                                        </Button>
-                                    </Grid>
-                                </React.Fragment>
-                            </Grid>
-                            <Grid container item spacing={3}>
-                                <React.Fragment>
-                                    <Grid item xs={12}>
-                                        <CustomizedTables />
-                                    </Grid>
-                                </React.Fragment>
-                            </Grid>
-                            <Grid container item spacing={3}>
-                                <React.Fragment>
-                                    <Grid item xs={4}>
-                                        <BasicSelect labelname={"ผู้เห็นชอบโครงการ"} data={year} />
-                                    </Grid>
-                                    <Grid item xs={1}>
-                                        <Button fullWidth variant="contained" endIcon={<FaSave />} size="large">
-                                            เลือก
-                                        </Button>
-                                    </Grid>
-                                </React.Fragment>
-                            </Grid>
-                            <Grid container item spacing={3}>
-                                <React.Fragment>
-                                    <Grid item xs={12}>
-                                        <CustomizedTables />
+
                                     </Grid>
                                 </React.Fragment>
                             </Grid>
@@ -402,6 +530,85 @@ function Activity({ handleettitlename }) {
                                 <React.Fragment>
                                     <Grid item xs={2}>
                                         <TextField fullWidth id="outlined-basic" label={"ลำดับที่"} variant="outlined" />
+                                    </Grid>
+                                    <Grid item xs={4}>
+                                        <TextField fullWidth id="outlined-basic" label={"ปริมาณผลผลิต/ผลลัพธ์ที่คาดหวัง"} variant="outlined" />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={4}>
+                                        <BasicSelect labelname={"ผู้รับผิดชอบกิจกรรม"} data={year} />
+                                    </Grid>
+                                    <Grid item xs={1}>
+                                        <Button fullWidth variant="contained" endIcon={<FaSave />} size="large">
+                                            เลือก
+                                        </Button>
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={12}>
+                                        <CustomizedTables />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={4}>
+                                        <BasicSelect labelname={"หัวหน้ากลุ่มสาระฯ/หัวหน้างาน"} data={year} />
+                                    </Grid>
+                                    <Grid item xs={1}>
+                                        <Button fullWidth variant="contained" endIcon={<FaSave />} size="large">
+                                            เลือก
+                                        </Button>
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={12}>
+                                        <CustomizedTables />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={4}>
+                                        <BasicSelect labelname={"ผู้เสนอกิจกรรม"} data={year} />
+                                    </Grid>
+                                    <Grid item xs={1}>
+                                        <Button fullWidth variant="contained" endIcon={<FaSave />} size="large">
+                                            เลือก
+                                        </Button>
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={12}>
+                                        <CustomizedTables />
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={4}>
+                                        <BasicSelect labelname={"ผู้เห็นชอบกิจกรรม"} data={year} />
+                                    </Grid>
+                                    <Grid item xs={1}>
+                                        <Button fullWidth variant="contained" endIcon={<FaSave />} size="large">
+                                            เลือก
+                                        </Button>
+                                    </Grid>
+                                </React.Fragment>
+                            </Grid>
+                            <Grid container item spacing={3}>
+                                <React.Fragment>
+                                    <Grid item xs={12}>
+                                        <CustomizedTables />
                                     </Grid>
                                 </React.Fragment>
                             </Grid>
